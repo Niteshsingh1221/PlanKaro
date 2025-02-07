@@ -1,88 +1,112 @@
-/* src/components/Navbar.css */
-.admin-container{
-  height: 100vh;
-  width: 100vw;
-}
-.navbar {
-  background: linear-gradient(135deg, #ff5c8d, #ffab40); 
-  color: white;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar-logo h2 {
+.HomeContainer {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.navbar-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding: 1rem;
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: linear-gradient(180deg, #f56692 0%, #f2994a 100%);
+  /* filter: blur(100px); */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border: 1px solid;
+    background: rgba(252, 246, 249, 0.78);
+    border: 3px solid #fff;
+    backdrop-filter: blur(4.5px);
+    border-radius: 30px;
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      .logo {
+        font-size: xx-large;
+      }
+    }
+    .items {
+      .item {
+        display: flex;
+        margin: 2rem 0;
+        gap: 0.5rem;
+        cursor: pointer;
+      }
+    }
+    .signOut {
+      cursor: pointer;
+      span {
+        margin-left: 1rem;
+      }
+    }
+  }
+  .mainContainer {
+    width: 75%;
+    background: rgba(252, 246, 249, 0.78);
+    border: 3px solid #fff;
+    backdrop-filter: blur(4.5px);
+    border-radius: 30px;
+  }
+  .signOut{
+    width: 6rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 2px solid #9CD3D9;
+    background-color: #B5B4D9;
+    padding-top: 0.5rem;
+  }
 }
 
-.navbar-links li {
-  margin-left: 30px;
-}
-
-.navbar-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-.navbar-links a:hover {
-  color: #222;
-  background-color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.navbar-links a.active {
-  font-weight: bold;
-  color: #ffab40;
-  border-bottom: 2px solid #ffab40;
-}
 
 
-.center-div {
+
+
+
+
+
+/***********************Location************************/
+.location{
+  padding: 3rem;
+  height: 100%;
   display: flex;
-  justify-content: center;  
-  align-items: center;       
-  text-align: center;
-  height: 93%;
-  width: 100%;
-  background-image: url("../../Utils/admin.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
+  flex-direction: column;
+  .location-heading{
+    h3{
+      font-size: 3rem;
+    }
+  }
+  .location-form{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    
+  }
 }
-.center-div h2 {
-  font-size: 90px; 
-  font-weight: bold; 
-  color: white;
-  /* background: linear-gradient(135deg, #ff5c8d, #ffab40); */
-  opacity: 0.9;
-  margin-bottom: 45rem;
-  font-family: "Roboto" sans-serif ;
-  background: linear-gradient(135deg, #ff5c8d, #ffab40);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  
+
+
+/******************Hotel**************************/
+.addHotel{
+  padding: 2rem;
+  button{
+    width: auto;
+  }
+  .hotel-container{
+    .hotel-card{
+      .btn{
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+
+
+/**************************Model********************************/
+
+.modal-overlay{
+  padding: 1rem;
+  .modal-content{
+  }
 }
