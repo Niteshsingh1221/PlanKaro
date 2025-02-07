@@ -10,6 +10,7 @@ import Location from './component/adminpanel/Location';
 // import Room from './component/adminpanel/Room';
 import BookHotel from './component/booking/bookhotel';
 import ForgotPassword from './component/authentication/ForgotPassword';
+import Booking from './component/booking/Booking';
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <Route path="/location" element={<Location />} />
       <Route path="/bookhotel" element={<BookHotel />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/booking" element={<Booking />} />
 
       </Routes>
     </BrowserRouter>
