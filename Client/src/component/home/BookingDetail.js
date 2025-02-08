@@ -21,7 +21,14 @@ const BookingDetail=()=>{
 
 
     return(
-        <div>
+        <div className="bookingdetails">
+            <div className="cardsetails">
+            <div className="headingname">
+                <h1>Booking Details</h1>
+
+            </div>
+            {bookingdetails.ma}
+            </div>
 
         </div>
     )
