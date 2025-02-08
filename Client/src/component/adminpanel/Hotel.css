@@ -25,9 +25,9 @@
     margin-top: 2rem;
   }
   
-  .hotel-card:hover {
+  /* .hotel-card:hover {
     transform: scale(1.05);
-  }
+  } */
   
   /* Hotel Image */
   .hotel-image {
@@ -79,14 +79,14 @@
   }
   
   /* Loading & Error Messages */
-  .loading, .error {
+  /* .loading, .error {
     text-align: center;
     font-size: 18px;
     color: #555;
     margin-top: 50px;
-  }
+  } */
   
-  button {
+  /* button {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: white;
     font-size: 16px;
@@ -96,12 +96,12 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-}
+} */
 
-button:hover {
+/* button:hover {
     background: linear-gradient(to right, #feb47b, #ff7e5f);
     transform: scale(1.05);
-}
+} */
 
 .updatebutton {
     background: linear-gradient(to right, #4CAF50, #66bb6a); /* Green gradient */
@@ -115,10 +115,10 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-.updatebutton:hover {
+/* .updatebutton:hover {
     background: linear-gradient(to right, #43a047, #388e3c);
     transform: scale(1.05);
-}
+} */
 
 .deletebutton {
     background: linear-gradient(to right, #f44336, #e53935); /* Red gradient */
@@ -133,7 +133,7 @@ button:hover {
     margin-left: 7rem;
 }
 
-.deletebutton:hover {
+/* .deletebutton:hover {
     background: linear-gradient(to right, #d32f2f, #b71c1c);
     transform: scale(1.05);
-}
+} */

@@ -52,11 +52,11 @@
 }
 
 /* Button Hover Effect */
-.auth-buttons button:hover {
+/* .auth-buttons button:hover {
     background-color: #45a049;
-}
+} */
 
-.auth-buttons a {
+/* .auth-buttons a {
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -64,45 +64,20 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-  }
-  
+  } */
+/*   
   .auth-buttons a:hover {
     color: #222;
     background-color: white;
     padding: 5px 15px;
     border-radius: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
+  } */
 
 /* Right side: Logo */
 .navbar .logo img {
-    width: 90px; /* Adjust the logo size */
+    width: 90px; 
     height: auto;
-}
-
-/* Mobile View: Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack logo and buttons vertically */
-        padding: 15px;
-    }
-
-    .auth-buttons {
-        width: 100%; /* Full width for buttons */
-        justify-content: center; /* Center buttons */
-        margin-bottom: 15px;
-    }
-
-    .auth-buttons button {
-        width: 100%; /* Full width for buttons on mobile */
-        margin-right: 100px; /* No margin for buttons */
-        margin-bottom: 10px; /* Space between buttons */
-    }
-
-    .navbar .logo img {
-        width: 120px; /* Adjust logo size for smaller screens */
-    }
-
 }
 
 .container

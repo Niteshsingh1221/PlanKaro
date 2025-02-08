@@ -61,19 +61,40 @@ public class UsersServiceImpl implements UserService {
 
 	@Override
 	public boolean UpdateUser(UsersDto usersdto) {
-		Users users= usersrepository.findById(usersdto.getUser_id()).get();
-		if(usersdto.getUsername()!=null) {
-			users.setUsername(usersdto.getUsername());
-		}
-		if(users.getMobile_no()!=null) {
-			users.setMobile_no(usersdto.getMobile_no());
-		}
-		if(usersdto.getPassword()!=null) {
-			users.setPassword(usersdto.getPassword());
-		}
+	    // Retrieve the user by their ID
+	    Users users = usersrepository.findById(usersdto.getUser_id()).get();
+	    
+	    // Update fields based on the values provided in the UsersDto
+	    if(usersdto.getUsername() != null && !usersdto.getUsername().isEmpty()) {
+	        users.setUsername(usersdto.getUsername());
+	    }
+	    if(usersdto.getEmail() != null && !usersdto.getEmail().isEmpty()) {
+	        users.setEmail(usersdto.getEmail());
+	    }
+	    if(usersdto.getPassword() != null && !usersdto.getPassword().isEmpty()) {
+	        users.setPassword(usersdto.getPassword());
+	    }
+	    if(usersdto.getFullname() != null && !usersdto.getFullname().isEmpty()) {
+	        users.setFullname(usersdto.getFullname());
+	    }
+	    if(usersdto.getMobile_no() != null && !usersdto.getMobile_no().isEmpty()) {
+	        users.setMobile_no(usersdto.getMobile_no());
+	    }
+	    if(usersdto.getGender() != null) {
+	        users.setGender(usersdto.getGender());
+	    }
+	    if(usersdto.getMobile_no() != null && !usersdto.getMobile_no().isEmpty()) {
+	        users.setMobile_no(usersdto.getMobile_no());
+	    }
+	    if(usersdto.getDateofbirth() != null) {
+	        users.setDateofbirth(usersdto.getDateofbirth());
+	    }
+
+	    // Save the updated user data to the database
 	    usersrepository.save(users);
-		return true;
+	    return true;
 	}
+
 
 	@Override
 	public boolean DeleteUser(Integer user_id) {
