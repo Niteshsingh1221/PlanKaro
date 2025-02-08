@@ -33,9 +33,9 @@
           width: fit-content;
         }
         div {
-          width: 6rem;
+          width: 9rem;
           button {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
           }
         }
       }
@@ -78,7 +78,7 @@
     }
   }
 
-  .footer{
+  /* .footer{
     width: auto;
     display: flex;
     justify-content: center;
@@ -92,6 +92,34 @@
             margin-bottom: 0;
         }
     }
+  } */
+
+  button{
+    height: 2.5rem;
+    width: 9rem;
+    background-color: #003b95;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
   }
 
+}
+
+.footer{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #bbbfbc;
+  overflow-x: hidden;
+  .footer-container{
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h4{
+          margin-bottom: 0;
+      }
+  }
 }

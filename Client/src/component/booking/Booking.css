@@ -1,57 +1,92 @@
-/* .booking{
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(to bottom right, #79adcc 0%, black 100%);
-
-    .input{
-        display: flex;
-        label{
-            width: 10rem;
-            padding-top: 1rem;
-        }
-        input{
-            width: 20rem;
-        }
-        button{
-            width: 3rem;
-        }
-        span{
-            padding: 2rem;
-        }
-    }
+.booking {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-
-
-.bookingheader{
+.bookingform {
+  background: linear-gradient(to bottom right, #79adcc 0%, black 100%);
+  width: 98.9vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5rem;
+  .bookingheader {
     margin-top: 3rem;
     margin-bottom: 2rem;
-    width: 40%;
+    width: 35%;
     border: 2px solid black;
     box-shadow: 2px 5px 8px black;
     padding: 1rem 4rem;
-    background-color:#79adcc;
-    .noofroom{
-        height: 4rem;
-        label{
-            padding-top: 2rem;
+    background-color: #79adcc;
+    display: flex;
+    justify-content: center;
+    h1{
+        font-size: 3rem;
+        margin: 0;
+    }
+  }
+  .Form {
+    width: 40%;
+    padding: 2rem;
+    border: 2px solid gray;
+    background: linear-gradient(to bottom right, gray 0%, black 100%);
+    .hotelicon {
+      display: flex;
+      justify-content: center;
+    }
+    div {
+      display: flex;
+      label {
+        width: 15rem;
+        padding-top: 1rem;
+        color: white;
+        font-size: 1.5rem;
+      }
+      p{
+        color: white;
+        font-size: 1.5rem;
+      }
+      input {
+        width: 20rem;
+      }
+      button {
+        width: 3rem;
+      }
+    }
+    .number-of-rooms {
+      display: flex;
+      button {
+        height: 3rem;
+        width: 3rem;
+        background-color: #003b95;
+        color: white;
+        font-size: 2rem;
+      }
+      span {
+        padding: 0rem 2rem;
+        color: white;
+        font-size: 2rem;
+      }
+    }
+    .submit-button {
+      button {
+        height: 3rem;
+        width: 15rem;
+        background-color: #003b95;
+        border: 2px solid black;
+        box-shadow: 2px 2px 2px black;
+        color: white;
+        border-radius: 0.5rem;
+        font-size: 1.3rem;
+      }
+    }
+    .total-amount{
+        p{
+            color: white;
         }
     }
-    .submitdetails{
-        width: fit-content;
-    }
+  }
 }
-.headingdetails{
-    display: flex;
-    justify-content: center;
-}
-.hotelicon{
-    display: flex;
-    justify-content: center;
-}
-.submitdetails{
-    display: flex;
-    justify-content: center;
-   
-} */

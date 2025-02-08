@@ -46,48 +46,9 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* <div className="nav-content">
-        <div className="navbar">
-          <div className="logo">
-            <img src={Logo} alt="Logo" />
-          </div>
-
-          <div className="auth-buttons">
-            <div className="home-userName">
-              {userName !== "" ? (
-                <Link to="/userprofile">
-                  <button>{usericon}{userName}</button>
-                </Link>
-              ) : (
-                <Link to="/login">
-                  <button>Login</button>
-                </Link>
-              )}
-            </div>
-            <div className="signIn-signOut">
-              {userName !== "" ? (
-                <button type="button" onClick={SignOut}>
-                  Signout
-                </button>
-              ) : (
-                <Link to="/register">
-                  <button>SignUp</button>
-                </Link>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="heading-h2">
-          <h2>Find your next stay</h2>
-          <h3>Search low prices on hotels, homes and much more...</h3>
-        </div>
-      </div> */}
       <div className="home-container">
         <Navbar />
       </div>
-      {/* <div className="wallpaper">
-          <img src={Wallpaper} alt="wallpaper"></img>
-        </div> */}
 
       <div className="hotel-card-display">
         <div className="heading-h3">
@@ -152,7 +113,7 @@ const Home = () => {
                     </Link>
                   ) : (
                     <Link to="/login">
-                      <button>Book Hotel</button>{" "}
+                      <button>Book Hotel</button>
                     </Link>
                   )}
                 </div>
