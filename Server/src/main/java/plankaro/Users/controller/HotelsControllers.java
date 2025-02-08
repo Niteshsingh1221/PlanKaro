@@ -57,7 +57,7 @@ public class HotelsControllers {
 
 	@PutMapping("update/{id}")
 
-	public HotelResponse updateHotel(@PathVariable("id") int hid, @RequestBody UpdateHotelDto dto) {
+	public HotelResponse updateHotel(@PathVariable("id") int hid, @RequestBody HotelsDTO dto) {
 		return hotelsService.updateHotel(hid, dto);
 	}
 

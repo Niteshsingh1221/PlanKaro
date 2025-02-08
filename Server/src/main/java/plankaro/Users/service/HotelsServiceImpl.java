@@ -138,7 +138,7 @@ public class HotelsServiceImpl implements HotelsService
 		return response;
 	}
 	
-	public HotelResponse updateHotel(int hid, UpdateHotelDto hotelDto) {
+	public HotelResponse updateHotel(int hid, HotelsDTO hotelDto) {
 
 		HotelResponse response = new HotelResponse();
 		

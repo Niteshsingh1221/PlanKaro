@@ -131,7 +131,7 @@ const Location = () => {
         <h3>Display the Location</h3>
       </div>
       <table className="location-table">
-        <thead className="location-table-head">
+        <thead >
           <tr>
             <th>Location Name</th>
             <th>Location Image</th> 

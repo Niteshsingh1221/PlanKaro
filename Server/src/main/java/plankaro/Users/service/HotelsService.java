@@ -15,6 +15,6 @@ public interface HotelsService {
 	public List<HotelsDTO> allHotels();
 	public List<HotelsDTO> HotelsNameLike(String nameLike);
 	public HotelResponse deleteById (int hid);
-	public HotelResponse updateHotel (int hid , UpdateHotelDto updateHotelDto);
+	public HotelResponse updateHotel (int hid , HotelsDTO hotelDto);
 	public List<HotelsDTO> HotelLocationLike(String locationLike);
 }
