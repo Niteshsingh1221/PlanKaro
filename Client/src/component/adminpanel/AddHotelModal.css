@@ -1,4 +1,4 @@
-/* Modal Background */
+/* Modal Background
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -11,7 +11,6 @@
     align-items: center;
 }
 
-/* Modal Content */
 .modal-content {
     background: white;
     padding: 20px;
@@ -32,7 +31,6 @@
 
 }
 
-/* Form Styles */
 .modal-content form {
     display: flex;
     flex-direction: column;
@@ -45,7 +43,6 @@
     border-radius: 5px;
 }
 
-/* Buttons */
 .addbutton {
     background: linear-gradient(to right, #4CAF50, #66bb6a);
     color: white;
@@ -64,7 +61,6 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
-    margin-left: 12rem;
 }
 
 /* .addbutton:hover {
@@ -73,4 +69,133 @@
 
 .closebutton:hover {
     background: linear-gradient(to right, #d32f2f, #b71c1c);
-} */
+}
+
+select[name="location"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select[name="location"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+ */
+
+
+
+ /* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above everything */
+  }
+  
+  /* Modal Content Box */
+  .modal-content {
+    background: #ffffff;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Modal Heading */
+  .modal-content h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 22px;
+  }
+  
+  /* Form Styling */
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Labels */
+  .modal-content label {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    color: #555;
+  }
+  
+  .modal-content input,
+  .modal-content select,
+  .modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  /* Textarea */
+  .modal-content textarea {
+    height: 80px;
+    resize: none;
+  }
+  
+  /* Buttons */
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .addbutton,
+  .closebutton {
+    padding: 10px;
+    width: 48%;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  /* Add Hotel Button */
+  .addbutton {
+    background-color: #27ae60; /* Green */
+    color: white;
+  }
+  
+  .addbutton:hover {
+    background-color: #219150;
+  }
+  
+  /* Close Button */
+  .closebutton {
+    background-color: #e74c3c; /* Red */
+    color: white;
+  }
+  
+  .closebutton:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .modal-content {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  }
+  

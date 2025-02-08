@@ -1,75 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AddHotelModal.css"; // Import the modal's CSS
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
-
-
-const AddHotelModal = ({ isOpen, onClose }) => {
-
-    const navigate = useNavigate();
+const AddHotelModal = ({setModel }) => {
     const [hotelimage, setHotelImage] = useState(null);
-    // const [locationimage, setLocationImage] = useState(null);
-
+    const [location, setLocationDetail] = useState([]); 
     const [hotelDetails, setHotelDetails] = useState({
         name: "",
         location: "",
         description: "",
-        pricePerNight: "",
-        // hotelimage: "",
-        // locationimage: "",
+        pricePerNight: ""
     });
 
-    if (!isOpen) return null;
+    // if (!isOpen) return null;
+
+
+    useEffect(() => {
+        const fetchLocation = async () => {
+            const response = await axios.get("http://localhost:8080/location/getalllocation");
+            console.log(response.data, "response");
+
+            setLocationDetail(response.data);
+
+        }
+        fetchLocation();
+    },[])
 
     const handleChange = (e) => {
-        // const { name, value } = e.target;
         setHotelDetails({
             ...hotelDetails,
             [e.target.name]: e.target.value,
         });
     };
 
-    const handleImageChange = (e, imageType) => {
+    const handleImageChange = (e) => {
         if (e.target.files.length > 0) {
-          if (imageType === "hotelimage") {
             setHotelImage(e.target.files[0]);
-         } 
-        //  else if (imageType === "locationimage") {
-        //     setLocationImage(e.target.files[0]);
-        //   }
         }
-      };
+    };
 
-      const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Hotel Details:", hotelDetails);
-    
+
         const formData = new FormData();
         formData.append("dto", new Blob([JSON.stringify(hotelDetails)], { type: "application/json" }));
-        
-        if (hotelimage) formData.append("hotelimage", hotelimage);
-        // if (locationimage) formData.append("locationimage", locationimage);
-    
-        try {
-          const response = await axios.post("http://localhost:8080/hotels/addHotel", formData, {
-            headers: { "Content-Type": "multipart/form-data" },
-          });
-    
-          console.log("Hotel Added:", response.data);
-          alert("Hotel added successfully!");
-    
-          // Reset form after submission
-          setHotelDetails({ name: "", location: "", description: "", pricePerNight: "" });
-          setHotelImage(null);
-        //   setLocationImage(null);
-          onClose();
-        } catch (error) {
-          console.error("Error adding hotel:", error);
-          alert("Error adding hotel!");
-        }
-      };
 
+        if (hotelimage) formData.append("hotelimage", hotelimage);
+
+        try {
+            const response = await axios.post("http://localhost:8080/hotels/addHotel", formData, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
+
+            console.log("Hotel Added:", response.data);
+            alert("Hotel added successfully!");
+
+            setHotelDetails({ name: "", location: "", description: "", pricePerNight: "" });
+            setHotelImage(null);
+            // onClose();
+            setModel(false);
+        } catch (error) {
+            console.error("Error adding hotel:", error);
+            alert("Error adding hotel!");
+        }
+    };
 
     return (
         <div className="modal-overlay">
@@ -87,14 +82,19 @@ const AddHotelModal = ({ isOpen, onClose }) => {
                     />
 
                     <label>Location:</label>
-                    <input
-                        type="text"
+                    <select
                         name="location"
                         value={hotelDetails.location}
-                        onChange={handleChange}
-                        placeholder="Enter location"
+                        onChange={handleChange} 
                         required
-                    />
+                    >
+                        <option value="">Select a location</option>
+                        {location.map((value , index) => (
+                            <option value={value.locationname}>
+                                {value.locationname}
+                            </option>
+                        ))}
+                    </select>
 
                     <label>Price per Night:</label>
                     <input
@@ -110,15 +110,8 @@ const AddHotelModal = ({ isOpen, onClose }) => {
                     <input
                         className="form-control"
                         type="file"
-                        onChange={(e) => handleImageChange(e, "hotelimage")}
+                        onChange={handleImageChange}
                     />
-
-                    {/* <label>Location Image:</label>
-                    <input
-                        className="form-control"
-                        type="file"
-                        onChange={(e) => handleImageChange(e, "locationimage")}
-                    /> */}
 
                     <label>Description:</label>
                     <textarea
@@ -133,7 +126,7 @@ const AddHotelModal = ({ isOpen, onClose }) => {
                         <button type="submit" className="addbutton">
                             Add Hotel
                         </button>
-                        <button type="button" className="closebutton" onClick={onClose}>
+                        <button type="button" className="closebutton" onClick={()=>setModel(false)}>
                             Cancel
                         </button>
                     </div>

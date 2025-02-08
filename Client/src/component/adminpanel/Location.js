@@ -1,10 +1,13 @@
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 const Location = () => {
   const [locationname, setLocationName] = useState("");
   const [locationimage, setLocationImage] = useState(null);
+  const [locationdetail, setLocationDetail] = useState([]);
+
+
 
   const handleChange = (e) => {
     setLocationName(e.target.value);
@@ -27,23 +30,24 @@ const Location = () => {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/location/addlocation",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      console.log(response.data);
+      const response = await axios.post("http://localhost:8080/location/addlocation", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      console.log("Full Response:", response);
+      console.log("Response Data:", response.data);
 
-      if (response.data.status === true) {
+      console.log("status : " + response.data.status);
+
+      if (response.data == 200) {
+
+        // fetchLocation();
         toast.success("Location Added Successfully", {
           position: "bottom-right",
           autoClose: 5000,
           pauseOnHover: true,
-        });
+        })
       } else {
         toast.error("Location Already Exists", {
           position: "bottom-right",
@@ -61,35 +65,75 @@ const Location = () => {
     }
   };
 
+
+  useEffect(() => {
+    const fetchLocation = async () => {
+      const response = await axios.get(
+        "http://localhost:8080/location/getalllocation"
+      );
+      console.log(response.data, "response");
+
+      setLocationDetail(response.data);
+    };
+    fetchLocation();
+    
+  }, []);
+  
+
+
   return (
     <div className="location">
-        <div className="location-heading">
-            <h3>Add Hotel Location</h3>
-        </div>
+      <div className="location-heading">
+        <h3>Add Hotel Location</h3>
+      </div>
       <div className="location-form">
-      <form onSubmit={handleSubmit}>
-        <div className="locationname">
-          <label>Location Name:</label>
-          <input type="text" name="locationname" onChange={handleChange} />
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="locationname">
+            <label>Location Name:</label>
+            <input type="text" name="locationname" onChange={handleChange} />
+          </div>
 
-        <div className="locationimage">
-          <label>Location Image:</label>
-          <input
-            type="file"
-            name="locationimage"
-            onChange={handleImageChange}
-          />
-        </div>
+          <div className="locationimage">
+            <label>Location Image:</label>
+            <input
+              type="file"
+              name="locationimage"
+              onChange={handleImageChange}
+            />
+          </div>
 
-        <div className="button">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          <div className="button">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
       </div>
       <ToastContainer />
+      <div className="location-display-table">
+        <h3>Display the Location</h3>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Location Name</th>
+            <th>Location Image</th> 
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {locationdetail.map((value , index)=>
+          {
+            return(
+              <tr>
+              <td>{value.locationname}</td>
+              <td><img src={`data:image/jpeg;base64,${value.locationimage}`} /></td>
+              
+            </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };
 
-export default Location; // Export the component
+export default Location; 

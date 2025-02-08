@@ -22,30 +22,6 @@ const AdminDashboard = () => {
   }
 
   return (
-    // <div className='admin-container'>
-    //   <nav className="navbar">
-    //     <div className="navbar-logo"  >
-    //       <h2>Admin</h2>
-    //     </div>
-    //     <ul className="navbar-links">
-    //       <li><Link to="/">Dashboard</Link></li>
-    //       <li><Link to="/bookings">Bookings</Link></li>
-    //       <li><Link to="/location">Manage Location</Link></li>
-
-
-    //       <li><Link to="/hotel">Hotel</Link></li>
-    //       <li><Link to="/settings">Settings</Link></li>
-    //     </ul>
-    //   </nav>
-
-    //   {/* <div className='container'> */}
-    //     {/* <img src="../../../lib/admin.webp" alt="" /> */}
-    //   <div class="center-div">
-    //     <h2>Welcome to Admin Page</h2>
-    //   </div>
-    //   {/* </div> */}
-
-    // </div>
     <div className="HomeContainer">
       <section className="sidebar">
         <div>
@@ -61,7 +37,7 @@ const AdminDashboard = () => {
             {/* {signOut} */}
             <span>Sign Out</span>
         </div>
-      </section>
+        </section>
       <section className="mainContainer">
         {
         //   console.log(selectItem)
@@ -80,4 +56,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default AdminDashboard;

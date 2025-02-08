@@ -13,18 +13,13 @@ import org.springframework.web.multipart.MultipartFile;
 import plankaro.Users.dto.LocationDto;
 import plankaro.Users.entity.Location;
 import plankaro.Users.repository.LocationRepository;
+import plankaro.hotels.exceptions.LocationNotFoundException;
 @Service
 
 public class LocationServiceImplementation implements LocationService {
 	
 	@Autowired
 	LocationRepository repo;
-	
-	
-	
-	
-	
-	
 	
 
 	@Override
@@ -83,6 +78,24 @@ public class LocationServiceImplementation implements LocationService {
 		return finalList;
 		
 		
+	}
+
+	@Override
+	public boolean deleteLocation(int locationId) {
+		
+		try
+		{
+			@SuppressWarnings("unused")
+			Location locationentity = repo.findById(locationId).orElseThrow(()->new LocationNotFoundException("Location wiht Id" + " " + locationId + " " + "not found"));
+			repo.deleteById(locationId);
+		}
+		catch(LocationNotFoundException l)
+		{
+			System.out.println(l.getLocalizedMessage());
+			return false;
+		}
+		
+		return true;
 	}
 
 }
