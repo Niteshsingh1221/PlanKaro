@@ -6,8 +6,10 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../Footer";
+import Navbar from "./Navbar";
 
 const Home = () => {
+  const usericon=<i className="fa-solid fa-user"></i>
   const navigate = useNavigate();
   const [locationdetail, setLocationDetail] = useState([]);
 
@@ -44,7 +46,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <div className="nav-content">
+      {/* <div className="nav-content">
         <div className="navbar">
           <div className="logo">
             <img src={Logo} alt="Logo" />
@@ -54,7 +56,7 @@ const Home = () => {
             <div className="home-userName">
               {userName !== "" ? (
                 <Link to="/userprofile">
-                  <button className="userName-button">{userName}</button>
+                  <button>{usericon}{userName}</button>
                 </Link>
               ) : (
                 <Link to="/login">
@@ -79,8 +81,10 @@ const Home = () => {
           <h2>Find your next stay</h2>
           <h3>Search low prices on hotels, homes and much more...</h3>
         </div>
+      </div> */}
+      <div className="home-container">
+        <Navbar />
       </div>
-
       {/* <div className="wallpaper">
           <img src={Wallpaper} alt="wallpaper"></img>
         </div> */}

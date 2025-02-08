@@ -49,6 +49,13 @@ const Navbar = () => {
         <div className="logo">
           <img src={Logo} alt="Logo" />
         </div>
+        <div className="BookingDetail"> 
+          {userName!== "" ?(<Link to="/bookingdetail">
+                <button>BookingDetail</button>
+              </Link>):(<Link to="/login">
+                <button>BookingDetail</button>
+              </Link>)}
+        </div>
 
         <div className="auth-buttons">
           <div className="home-userName">

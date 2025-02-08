@@ -33,7 +33,6 @@ public class UsersServiceImpl implements UserService {
 	public Map<String, Object> NewUser(UsersDto usersdto) {
 		
 		Users users = new Users();
-		BeanUtils.copyProperties(usersdto, users);
 		
 		users.setCreated_at(LocalDateTime.now());
 		System.out.println(usersdto.getEmail());
@@ -43,7 +42,7 @@ public class UsersServiceImpl implements UserService {
 		List<Users> allUsers = usersrepository.findAll();
 		
 		for(Users u : allUsers) {
-			if(usersdto.getEmail().equals(u.getEmail())) {
+			if(usersdto.getEmail().equals(u.getEmail()) || usersdto.getUsername().equals(u.getUsername())) {
 			
 
 				Map<String, Object> response = new HashMap<>();
@@ -52,6 +51,7 @@ public class UsersServiceImpl implements UserService {
 		        return response;
 			}
 		}
+		BeanUtils.copyProperties(usersdto, users);
 		usersrepository.save(users);
 		
 		

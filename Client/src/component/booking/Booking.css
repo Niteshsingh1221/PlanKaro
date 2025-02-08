@@ -1,0 +1,57 @@
+/* .booking{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #79adcc 0%, black 100%);
+
+    .input{
+        display: flex;
+        label{
+            width: 10rem;
+            padding-top: 1rem;
+        }
+        input{
+            width: 20rem;
+        }
+        button{
+            width: 3rem;
+        }
+        span{
+            padding: 2rem;
+        }
+    }
+}
+
+
+
+.bookingheader{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 40%;
+    border: 2px solid black;
+    box-shadow: 2px 5px 8px black;
+    padding: 1rem 4rem;
+    background-color:#79adcc;
+    .noofroom{
+        height: 4rem;
+        label{
+            padding-top: 2rem;
+        }
+    }
+    .submitdetails{
+        width: fit-content;
+    }
+}
+.headingdetails{
+    display: flex;
+    justify-content: center;
+}
+.hotelicon{
+    display: flex;
+    justify-content: center;
+}
+.submitdetails{
+    display: flex;
+    justify-content: center;
+   
+} */

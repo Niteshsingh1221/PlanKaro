@@ -43,7 +43,7 @@ const Register = () => {
       toast.success("Registeration Successfull",{position:"bottom-right",autoClose:5000,pauseOnHover:true})
     }
     else{
-      toast.error("Registeration Failed",{position:"bottom-right",autoClose:5000})
+      toast.error("Email or Username already exist ",{position:"bottom-right",autoClose:5000})
 
     }
   }
