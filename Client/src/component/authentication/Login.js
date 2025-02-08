@@ -24,7 +24,7 @@ const Login = () => {
       username:login.username,
       password:login.password
     })
-   // console.log(response)
+    console.log(response,"clone")
     if(response.data.status===true){
 
       

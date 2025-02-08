@@ -1,35 +1,78 @@
 import axios from "axios";
 
-const BookingDetail=()=>{
-    const[bookingdetails,setBookingDetails]=useState([])
+import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
+import Footer from "../Footer";
 
 
-        const [userName, setUserName] = useState("");
-        useEffect(() => {
-          let user = JSON.parse(localStorage.getItem("user"));
-          if (user) {
-            setUserName(user.username);
-          } else {
-            setUserName("");
-          }
-          const fetch = async()=>{
-            const response =await axios.get(`http://localhost:8080/bookingdetails/username/${userName}`)
-          }
-          fetch();
-          setBookingDetails(response.data)
-        }, []);
+const BookingDetail = () => {
+    const [bookingdetails, setBookingDetails] = useState([])
 
 
-    return(
-        <div className="bookingdetails">
-            <div className="cardsetails">
-            <div className="headingname">
-                <h1>Booking Details</h1>
+   
+    useEffect(() => {
+        let users = JSON.parse(localStorage.getItem("user"));
+        const fetch = async () => {
+            const response = await axios.get(`http://localhost:8080/bookingdetails/getBookingByusername/${users.username}`)
+            console.log(response);
+            setBookingDetails(response.data)
+        }
+      fetch();
 
-            </div>
-            {bookingdetails.ma}
-            </div>
 
+
+    }, []);
+
+
+    return (
+        <div className='dashboard'>
+            <Navbar />
+          <div className='dashboard-heading'>
+            Booking Details
+          </div>
+          {/* <div className="dashboard-searchbox">
+            <input
+              type="text"
+              placeholder="Search by Fullname"
+            />
+          </div> */}
+    
+          <table className='dashboard-user-table'>
+            <thead>
+              <tr>
+                <th>HotelName</th>
+                <th>Email</th>
+                <th>MobileNo</th>
+                <th>CheckInDate</th>
+                <th>CheckOutDate</th>
+                <th>Location</th>
+                <th>Amout</th>
+                <td>Action</td>
+              </tr>
+            </thead>
+            <tbody>
+              {bookingdetails.map((value, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{value.hotelname}</td>
+                    <td>{value.personemail}</td>
+                    <td>{value.personphone}</td>
+                    <td>{value.checkindate}</td>
+                    <td>{value.checkoutdate}</td>
+                    <td>{value.location}</td>
+                    <td>{value.totalamount}</td>
+              <td><button className="location-delete-button"  >Delete</button></td>
+
+    
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+          <div className="footer footer-bottom">
+            <Footer />
+          </div>
         </div>
-    )
+      )
 }
+export default BookingDetail;  //exporting the component

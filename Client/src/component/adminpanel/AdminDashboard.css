@@ -185,10 +185,11 @@ td img {
 }
 
 .dashboard-user-table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   /* margin-top: 20px; */
   margin-bottom: 15px;
+  margin-left: 5rem;
 }
 
 .dashboard-user-table th {
