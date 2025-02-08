@@ -54,7 +54,7 @@ const Home = () => {
             <div className="home-userName">
               {userName !== "" ? (
                 <Link to="/userprofile">
-                  <button>{userName}</button>
+                  <button className="userName-button">{userName}</button>
                 </Link>
               ) : (
                 <Link to="/login">

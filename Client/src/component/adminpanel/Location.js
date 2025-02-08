@@ -43,6 +43,7 @@ const Location = () => {
       if (response.data == 200) {
 
         // fetchLocation();
+        const response = await axios.get("http://localhost:8080/location/getalllocation");
         toast.success("Location Added Successfully", {
           position: "bottom-right",
           autoClose: 5000,
@@ -79,7 +80,25 @@ const Location = () => {
     
   }, []);
   
-
+  const handledelete = async (id) => {
+    try {
+        await axios.delete(`http://localhost:8080/location/delete/${id}`);
+        const response = await axios.get("http://localhost:8080/location/getalllocation");
+        setLocationDetail(response.data);
+        toast.success("Location Deleted Successfully", {
+          position: "bottom-right",
+          autoClose: 1000,
+          pauseOnHover: true,
+          });
+    } catch (error) {
+        console.error("Error deleting hotel:", error);
+        toast.error("An error occurred while deleting the location", {
+          position: "bottom-right",
+          autoClose: 1000,
+          pauseOnHover: true,
+          });
+    }
+};
 
   return (
     <div className="location">
@@ -111,8 +130,8 @@ const Location = () => {
       <div className="location-display-table">
         <h3>Display the Location</h3>
       </div>
-      <table>
-        <thead>
+      <table className="location-table">
+        <thead className="location-table-head">
           <tr>
             <th>Location Name</th>
             <th>Location Image</th> 
@@ -126,7 +145,7 @@ const Location = () => {
               <tr>
               <td>{value.locationname}</td>
               <td><img src={`data:image/jpeg;base64,${value.locationimage}`} /></td>
-              
+              <tb><button className="location-delete-button" onClick={()=>handledelete(value.id)} >Delete</button></tb>
             </tr>
             )
           })}

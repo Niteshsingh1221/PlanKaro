@@ -25,51 +25,44 @@ import plankaro.response.HotelResponse;
 @CrossOrigin
 @RequestMapping("/hotels")
 public class HotelsControllers {
-	
+
 	@Autowired
 	HotelsService hotelsService;
-	
+
 	@GetMapping("/getHotel/{hid}")
-	public HotelsDTO getHotelDetails(@PathVariable("hid")int hotelsId)
-	{
+	public HotelsDTO getHotelDetails(@PathVariable("hid") int hotelsId) {
 		return hotelsService.getHotelById(hotelsId);
 	}
-	
+
 	@PostMapping("/addHotel")
-	public boolean addHotel(@RequestPart HotelsDTO dto , 
-							@RequestPart ("hotelimage") MultipartFile imageFile)
-	{
-		return hotelsService.addNewHotel(dto, imageFile );
+	public boolean addHotel(@RequestPart HotelsDTO dto, @RequestPart("hotelimage") MultipartFile imageFile) {
+		return hotelsService.addNewHotel(dto, imageFile);
 	}
-	
+
 	@GetMapping("/getAllHotels")
-	public List<HotelsDTO> getAllHotels()
-	{
+	public List<HotelsDTO> getAllHotels() {
 		return hotelsService.allHotels();
 	}
-	
+
 	@GetMapping("/gethotelbylocation")
-	public List<HotelsDTO> getHotelsNameLike(@RequestParam("nameLike")String nameLike)
-	{
+	public List<HotelsDTO> getHotelsNameLike(@RequestParam("nameLike") String nameLike) {
 		return hotelsService.HotelsNameLike(nameLike);
 	}
-	
+
 	@DeleteMapping("/deleteById/{hid}")
-	
-	public HotelResponse deletebyId(@PathVariable("hid") int hid)
-	{
+
+	public HotelResponse deletebyId(@PathVariable("hid") int hid) {
 		return hotelsService.deleteById(hid);
 	}
-	
+
 	@PutMapping("update/{id}")
-	
-	public HotelResponse updateHotel(@PathVariable("id") int hid, @RequestBody UpdateHotelDto dto)
-	{
+
+	public HotelResponse updateHotel(@PathVariable("id") int hid, @RequestBody UpdateHotelDto dto) {
 		return hotelsService.updateHotel(hid, dto);
 	}
-	
-	 @GetMapping("/location/{loc}")
-	    public List<HotelsDTO> getHotelsByLocation(@PathVariable("loc") String locationLike) {
-	        return hotelsService.HotelLocationLike(locationLike);
-	    }
+
+	@GetMapping("/location/{loc}")
+	public List<HotelsDTO> getHotelsByLocation(@PathVariable("loc") String locationLike) {
+		return hotelsService.HotelLocationLike(locationLike);
+	}
 }

@@ -1,17 +1,22 @@
 package plankaro.Users.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.apache.catalina.User;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import plankaro.Users.dto.LocationDto;
 import plankaro.Users.dto.UsersDto;
+import plankaro.Users.entity.Location;
 import plankaro.Users.entity.Users;
 import plankaro.Users.repository.UsersRepository;
 @Service
@@ -125,6 +130,26 @@ public class UsersServiceImpl implements UserService {
 		
 	}
 
+
+	@Override
+	public List<UsersDto> getAllUser() {
+		
+		Iterator<Users> iter = usersrepository.findAll().iterator();
+		ArrayList<UsersDto> finalList = new ArrayList<>();
+		while(iter.hasNext())
+		{
+			Users u = iter.next();
+			
+			UsersDto dto = new UsersDto();
+				BeanUtils.copyProperties(u, dto);
+				finalList.add(dto);
+				
+		}
+		
+		return finalList;
+	}
+
+	
 
 
 }
