@@ -43,7 +43,14 @@ public class BookingDetails {
 	@Column(name="totalamount")
 	String totalamount;
 	
+	@Column(name="userid")
+	String userid;
 	
+	@Column(name="hotelid")
+	String hotelid;
+	
+	@Column(name="hoteladdress")
+	String hoteladdress;
 
 
 
@@ -63,7 +70,7 @@ public void setHotelname(String hotelname) {
 	this.hotelname = hotelname;
 }
 
-public String getusername() {
+public String getUsername() {
 	return username;
 }
 
@@ -118,4 +125,32 @@ public String getTotalamount() {
 public void setTotalamount(String totalamount) {
 	this.totalamount = totalamount;
 }
+
+public String getUserid() {
+	return userid;
+}
+
+public void setUserid(String userid) {
+	this.userid = userid;
+}
+
+public String getHotelid() {
+	return hotelid;
+}
+
+public void setHotelid(String hotelid) {
+	this.hotelid = hotelid;
+}
+
+public String getHoteladdress() {
+	return hoteladdress;
+}
+
+public void setHoteladdress(String hoteladdress) {
+	this.hoteladdress = hoteladdress;
+}
+
+
+
+
 }

@@ -1,5 +1,6 @@
 package plankaro.Users.dto;
 
+
 public class BookingDetailsDto {
 	
 
@@ -12,6 +13,36 @@ public class BookingDetailsDto {
 	    String checkoutdate;
 	    String numofrooms;
 	    String totalamount;
+		String userid;
+		
+		String hotelid;
+		String hoteladdress;
+		
+		public String getUserid() {
+			return userid;
+		}
+
+		public void setUserid(String userid) {
+			this.userid = userid;
+		}
+
+		public String getHotelid() {
+			return hotelid;
+		}
+
+		public void setHotelid(String hotelid) {
+			this.hotelid = hotelid;
+		}
+
+		public String getHoteladdress() {
+			return hoteladdress;
+		}
+
+		public void setHoteladdress(String hoteladdress) {
+			this.hoteladdress = hoteladdress;
+		}
+
+		
 
 	    public Integer getSerialno() {
 	        return serialno;
@@ -29,9 +60,10 @@ public class BookingDetailsDto {
 	        this.hotelname = hotelname;
 	    }
 
-	    public String getusername() {
-	    	return username;
-	    }
+	    public String getUsername() {
+			return username;
+		}
+
 
 	    public void setUsername(String username) {
 	    	this.username = username;

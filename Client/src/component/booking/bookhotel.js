@@ -10,8 +10,16 @@ const BookHotel = () => {
     const gethoteldetails = (e) => {
         sessionStorage.setItem("hotelprice", JSON.stringify(e.pricePerNight))
         localStorage.setItem("hotelname",JSON.stringify(e.name))
+        localStorage.setItem("hotelid",JSON.stringify(e.hotelId))
+        localStorage.setItem("location",JSON.stringify(e.location))
+
+
+
         console.log(e, "response")
         console.log(e.name,"name")
+        console.log(e.location,"location")
+        console.log(e.hotelId,"hotelid")
+
     }
 
   

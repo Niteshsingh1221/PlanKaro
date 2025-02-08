@@ -1,6 +1,30 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState, useEffect } from 'react'
 
 const Booking = () => {
+  
+  const [bookingdetails, setBookingDetails] = useState([]);
+  const [userSearch, searchUser] = useState("");
+
+  useEffect(() => {
+    const fetchLocation = async () => {
+      const response = await axios.get(
+        "http://localhost:8080/bookingdetails/getallbooking"
+      );
+      console.log(response.data, "response");
+
+      setBookingDetails(response.data);
+    };
+    fetchLocation();
+
+  }, []);
+
+
+  const filteredBooking = bookingdetails.filter(user =>
+    user.username.toLowerCase().includes(userSearch.toLowerCase())
+  );
+
+
   return (
     <div className='admin-booking'>
 
@@ -19,28 +43,26 @@ const Booking = () => {
       <table className='admin-booking-table'>
         <thead>
           <tr>
-            <th>FullName</th>
+            <th>UserName</th>
             <th>Email</th>
             <th>MobileNumber</th>
-            <th>DateOfBirth</th>
             <th>LocationName</th>
             <th>HotelName</th>
           </tr>
         </thead>
         <tbody>
-          {/* {filteredUsers.map((value, index) => {
+          {filteredBooking.map((value, index) => {
             return (
               <tr key={index}>
                 <td>{value.username}</td>
-                <td>{value.fullname}</td>
-                <td>{value.email}</td>
-                <td>{value.mobile_no}</td>
-                <td>{value.dateofbirth}</td>
-                <td>{value.gender}</td>
+                <td>{value.personemail}</td>
+                <td>{value.personphone}</td>
+                <td>{value.hoteladdress}</td>
+                <td>{value.hotelname}</td>
 
               </tr>
             )
-          })} */}
+          })}
         </tbody>
       </table>
     </div>

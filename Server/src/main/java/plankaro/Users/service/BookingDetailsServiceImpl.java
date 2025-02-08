@@ -25,7 +25,7 @@ public class BookingDetailsServiceImpl implements BookingDetailsService {
 	
 
 	   @Override
-	    public List<BookingDetailsDto> getBookingByusername(String username) {
+		public List<BookingDetailsDto> getBookingByusername(String username) {
 	        List<BookingDetails> bookings = bookingrepo.getBookingByUsername(username);
 
 	        // Convert entity list to DTO list
@@ -40,11 +40,12 @@ public class BookingDetailsServiceImpl implements BookingDetailsService {
 	public boolean addbookingdetails(BookingDetailsDto bookingdetailsdto) {
 		
 		
-		System.out.println(bookingdetailsdto.getPersonphone());
+		System.out.println(bookingdetailsdto.getHoteladdress());
+//		System.out.println("Hello");
 	BookingDetails bookingdetails =new BookingDetails();
 	List<Users> userlist=usersrepo.findAll();
 	for(Users u : userlist) {
-		if(bookingdetailsdto.getusername().equals(u.getUsername())) {
+		if(bookingdetailsdto.getUsername().equals(u.getUsername())) {
 			BeanUtils.copyProperties(bookingdetailsdto, bookingdetails);
 			bookingrepo.save(bookingdetails);
 			

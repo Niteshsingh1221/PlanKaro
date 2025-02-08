@@ -42,7 +42,7 @@ public class HotelsControllers {
 	@GetMapping("/getAllHotels")
 	public List<HotelsDTO> getAllHotels() {
 		return hotelsService.allHotels();
-	}
+	} 
 
 	@GetMapping("/gethotelbylocation")
 	public List<HotelsDTO> getHotelsNameLike(@RequestParam("nameLike") String nameLike) {
