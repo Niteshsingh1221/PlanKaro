@@ -1,0 +1,145 @@
+.user-profile
+{
+    background-color: #007bff;
+    padding: 20px;
+}
+/* Profile Box (container) */
+.profile-container {
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    gap: 2rem;
+    width: 40vw;
+    height: auto;  /* Adjust height based on content */
+    background-color: white;  /* White background */
+    border: 2px solid #007bff;  /* Blue border around the container */
+    border-radius: 10px;  /* Rounded corners for the box */
+    padding: 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for the box */
+}
+.profile-container h1 {
+    font-size: 2rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: #003B95;
+}
+
+/* Profile form */
+.profile-form {
+    width: 100%;
+    div {
+        display: flex;
+        justify-content: space-between;
+        label {
+            width: 10rem;
+            padding-top: 1.5rem;
+            font-size: 1.2rem;
+            color: #007bff;  /* Blue color for labels */
+        }
+        input {
+            border: 1px solid #007bff;  /* Blue border for input fields */
+            padding: 0.5rem;
+            border-radius: 5px;
+            outline: none;
+            width: 60%;
+            font-size: 1rem;  /* Slightly larger text for readability */
+        }
+        input:focus {
+            border-color: #0056b3;  /* Darker blue when the field is focused */
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);  /* Light glow effect */
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Button Styles */
+.profile-container button {
+    background-color: #28a745;  /* Soft green background */
+    color: white;  /* White text */
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Specific styles for Delete button */
+.profile-container .delete-btn {
+    background-color: #dc3545;  /* Red background */
+}
+
+
+
+/* Profile Box (container) */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 40vw;
+    height: auto;  /* Adjust height based on content */
+    background-color: white;  /* White background */
+    border: 2px solid #007bff;  /* Blue border around the container */
+    border-radius: 10px;  /* Rounded corners for the box */
+    padding: 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for the box */
+}
+
+/* Profile form */
+.profile-form {
+    width: 100%;
+    div {
+        display: flex;
+        justify-content: space-between;
+        label {
+            width: 10rem;
+            padding-top: 1.5rem;
+            color: #007bff;  /* Blue color for labels */
+        }
+        input {
+            border: 1px solid #007bff;  /* Blue border for input fields */
+            padding: 0.5rem;
+            border-radius: 5px;
+            outline: none;
+            width: 60%;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+}
+
+.update-btn {
+    color: white;
+    background-color: white;
+}
+
+.back-to-home {
+    margin-top: 20px;
+    padding-left: 36%;     
+}
+
+.back-link {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+
