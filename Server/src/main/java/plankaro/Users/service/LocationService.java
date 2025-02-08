@@ -12,5 +12,7 @@ public interface LocationService {
 	public boolean  addlocation(String locationname,MultipartFile locationimage);
 	
 	public List<LocationDto> getalllocation();
+	
+	public boolean deleteLocation(int locationId);
 
 }

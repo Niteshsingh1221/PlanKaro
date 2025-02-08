@@ -6,11 +6,6 @@
     transition: transform 0.3s ease-in-out;
     background-color: #fff;
   }
-  
-  .hotel-card:hover {
-    transform: scale(1.05);
-  }
-  
   .hotel-image {
     width: 100%;
     height: 200px;
@@ -47,4 +42,41 @@
     color: #ff6600;
   }
 
-  
+.bookhotel-cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-left: 2rem;
+}
+
+.bookHotel-heading{
+  display: flex;
+  justify-content: center;
+  h1{
+    font-size: 3rem
+  }
+}
+
+.bookHotelContainer{
+  padding-bottom: 3rem;
+}
+
+.footer-hotelBooking{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #bbbfbc;
+  position: absolute;
+  width: 98.9vw;
+  /* bottom: 0; */
+  .footer-container{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h4{
+          margin-bottom: 0;
+      }
+  }
+}

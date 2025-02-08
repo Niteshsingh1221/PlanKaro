@@ -1,6 +1,7 @@
 package plankaro.Users.service;
 
 
+import java.util.List;
 import java.util.Map;
 
 import plankaro.Users.dto.UsersDto;
@@ -12,6 +13,6 @@ public interface UserService {
 	public boolean DeleteUser(Integer user_id);
 	public UsersDto getByUsername(Integer user_id);
 	public Map<String, Object> login(UsersDto usersdto);
-	
+	public List<UsersDto> getAllUser();
 
 }

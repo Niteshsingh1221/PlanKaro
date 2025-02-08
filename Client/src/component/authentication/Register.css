@@ -1,14 +1,5 @@
 
-  /* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
-  /* .logo {
-
-  } */
   
   .formContainer {
     /* background-image: url('/Users/niteshsingh/Downloads/photo-1506197603052-3cc9c3a201bd.jpeg'); */
@@ -108,4 +99,23 @@
     background-color: #45a049;
   } */
   
+  span a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  span a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    .formContainer {
+      padding: 20px;
+    }
+  
+    .heading h1 {
+      font-size: 24px;
+    }
+  }
   
