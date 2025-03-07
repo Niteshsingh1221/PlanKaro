@@ -84,6 +84,7 @@ public class HotelsServiceImpl implements HotelsService
 		return finalList;
 	}
 	
+	
 	@Override
 	public List<HotelsDTO> HotelsNameLike(String nameLike) {
 		
@@ -100,7 +101,7 @@ public class HotelsServiceImpl implements HotelsService
         return hotelsDTOs;
 	}
 	
-	
+	// Search by Location
 	@Override
 	public List<HotelsDTO> HotelLocationLike(String locationLike) {
 	    List<Hotels> allHotels = repository.findHotelsByLocation(locationLike);

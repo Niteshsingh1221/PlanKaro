@@ -44,7 +44,7 @@ public class HotelsControllers {
 		return hotelsService.allHotels();
 	} 
 
-	// get hotels by Name
+	// get hotels by Name   
 	@GetMapping("/gethotelbylocation")
 	public List<HotelsDTO> getHotelsNameLike(@RequestParam("nameLike") String nameLike) {
 		return hotelsService.HotelsNameLike(nameLike);
