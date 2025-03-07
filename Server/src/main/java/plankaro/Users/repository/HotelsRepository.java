@@ -14,9 +14,11 @@ import plankaro.Users.entity.Hotels;
 @Repository
 public interface HotelsRepository extends JpaRepository<Hotels, Integer> 
 {
+	
 	@Query("select objHotel from Hotels objHotel where objHotel.name LIKE %:name%")
 	public List<Hotels> getHotelsWithLike(@Param("name")String name);
 	
+	// This is JPQL Query for fetching Hotels By Location
 	 @Query("select objHotel from Hotels objHotel where objHotel.location LIKE %:location%")
 	  public  List<Hotels> findHotelsByLocation(@Param("location") String location);
 }
