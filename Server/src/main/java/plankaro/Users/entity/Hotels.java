@@ -37,12 +37,6 @@ public class Hotels {
 	@Lob
 	private byte[] hotelimage;
 	
-	
-
-
-	
-
-
 
 	public byte[] getHotelimage() {
 		return hotelimage;
@@ -54,20 +48,10 @@ public class Hotels {
 		this.hotelimage = hotelimage;
 	}
 
-
-
-	
-
-
-
-
-
-
 	public int getHotelId() {
 		return hotelId;
 	}
 
-	
 
 	public void setHotelId(int hotelId) {
 		this.hotelId = hotelId;

@@ -78,9 +78,7 @@ public class HotelsServiceImpl implements HotelsService
 				
 				
 		}
-		
-		
-		
+				
 		return finalList;
 	}
 	
@@ -152,7 +150,7 @@ public class HotelsServiceImpl implements HotelsService
 
 			
 			response.setCode(HttpStatus.OK.value());
-			response.setMessage("Ticket found");
+			response.setMessage("Update Hotel successfully");
 			response.setResult(true);
 			repository.save(hotels);
 		}
